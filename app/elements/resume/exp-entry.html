@@ -1,0 +1,15 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="exp-entry" attributes="name location startTime endTime"  noscript>
+    <template>
+        <link rel="stylesheet" type="text/css" href="../../../stylesheets/resume/main.css">
+        <li class="exp-entry">
+            <div class="location">{{name}}</div>
+            <div class="period">
+                <div>{{startTime}} -  {{endTime}}</div>
+                <div>{{location}}</div>
+            </div>
+        </li>
+        <content></content>
+    </template>
+</polymer-element>

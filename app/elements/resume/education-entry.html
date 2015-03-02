@@ -1,0 +1,15 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../app/elements/resume/exp-entry.html">
+
+<polymer-element name="education-entry" extends="exp-entry" attributes="name location startTime endTime degree gpa"  noscript>
+    <template>
+        <link rel="stylesheet" type="text/css" href="../../../stylesheets/resume/main.css">
+        <shadow></shadow>
+        <li class="exp-entry detail">
+            <span>{{degree}}</span>
+            <span> (GPA: {{gpa}})</span>
+        </li>
+
+
+    </template>
+</polymer-element>

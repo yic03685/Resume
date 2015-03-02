@@ -1,0 +1,22 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../app/elements/resume/resume-section.html">
+
+<polymer-element name="skill-section">
+    <template>
+        <link rel="stylesheet" type="text/css" href="../../../stylesheets/resume/main.css">
+        <resume-section title="skills">
+            <ul class="skills">
+                <template repeat="{{skill in skills}}">
+                    <li>{{skill}}</li>
+                </template>
+            </ul>
+        </resume-section>
+    </template>
+
+    <script>
+        Polymer("skill-section", {
+
+            skills: ["JavaScript/CoffeeScript", "CSS/SASS", "HTML", "C/C++", "JAVA/Scala", "jQuery/Angular/Polymer", "Gulp/Grunt", "Mocha", "OpenGL/WebGL", "Cude/OpenCL"]
+        });
+    </script>
+</polymer-element>

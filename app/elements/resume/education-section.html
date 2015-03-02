@@ -1,0 +1,39 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../app/elements/resume/resume-section.html">
+<link rel="import" href="../../../app/elements/resume/education-entry.html">
+
+<polymer-element name="education-section" >
+    <template>
+        <link rel="stylesheet" type="text/css" href="../../../stylesheets/resume/education.css">
+        <resume-section title="education">
+            <ol>
+                <template repeat="{{entry in entries}}">
+                    <education-entry name={{entry.name}} startTime={{entry.startTime}} endTime={{entry.endTime}} location={{entry.location}} degree={{entry.degree}} gpa={{entry.gpa}}></education-entry>
+                </template>
+            </ol>
+        </resume-section>
+    </template>
+
+    <script>
+
+    Polymer("education-section", {
+
+        entries: [{
+            name: "University of California, San Diego",
+            startTime: "09/01/2009",
+            endTime: "06/01/2011",
+            location: "La Jolla, CA, USA",
+            degree: "M.S. Computer Science Engineering",
+            gpa: 3.5
+        },{
+            name: "National Cheng Kung University",
+            startTime: "09/01/2003",
+            endTime: "01/15/2007",
+            location: "Tainan, Taiwan",
+            degree: "B.S. Computer Science Engineering",
+            gpa: 3.9
+        }]
+    });
+
+    </script>
+</polymer-element>
