@@ -61,6 +61,7 @@ li:hover {
   font-weight: bold;
 
   .location {
+    font-size: 15px;
     flex: 2 0;
     font-weight: bold;
   }
@@ -75,6 +76,11 @@ li:hover {
   ol {
     background-color: grey;
   }
+}
+
+.exp-entry.education-entry {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .detail {
@@ -109,7 +115,7 @@ li:hover {
 }
 
 .projects {
-  padding-left: 10px;
+  padding-left: 0;
 
   section {
     margin: 10px;
@@ -117,6 +123,10 @@ li:hover {
 
   ul {
     background-color: $lightBackground;
+  }
+
+  li {
+    padding: 5px;
   }
 }
 

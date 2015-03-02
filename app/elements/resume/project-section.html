@@ -1,33 +1,32 @@
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../../app/elements/resume/resume-section.html">
+<link rel="import" href="../../../app/elements/resume/exp-entry.html">
 
 <polymer-element name="project-section">
     <template>
         <link rel="stylesheet" type="text/css" href="../../../stylesheets/resume/main.css">
         <resume-section title="selected projects">
-            <ul class="projects">
-                <template repeat="{{project in entries}}">
-                    <li>
-                        <section>
-                            <div>{{project.name}}</div>
-                            <ul>
-                                <template repeat="{{detail in project.details}}">
-                                    <li>{{detail}}</li>
-                                </template>
-                            </ul>
-                        </section>
-                    </li>
+            <ol class="projects">
+                <template repeat="{{project in projects}}">
+                    <exp-entry name={{project.name}} startTime={{project.startTime}}>
+                        <ul>
+                            <template repeat="{{en in project.details }}">
+                                <li>{{en}}</li>
+                            </template>
+                        </ul>
+                    </exp-entry>
                 </template>
-            </ul>
+            </ol>
         </resume-section>
     </template>
 
     <script>
 
         Polymer("project-section", {
-            entries: [
+            projects: [
                 {
                     name: "Flickr App on PlayStation 4",
+                    startTime: "2014",
                     details: [
                         "A photo gallery app powered by backbone.js",
                         "Dynamically loads photos from Flickr’s Photo API"
@@ -35,6 +34,7 @@
                 },
                 {
                     name: "Functional Reactive Programming Library",
+                    startTime: "2014",
                     details: [
                         "A functional reactive programming library written in dart",
                         "Implemented APIs covered by Bacon.js with a tool for automatic template generation powered by Angular.dart"
