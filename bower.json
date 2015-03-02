@@ -1,0 +1,24 @@
+{
+  "name": "Madrox",
+  "version": "0.0.0",
+  "authors": [
+    "Yi Chen <yic036@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "webcomponentsjs": "git://github.com/Polymer/webcomponentsjs.git",
+    "requirejs": null,
+    "polymer": "Polymer/polymer#~0.4.2",
+    "polymer-core-elements": "Polymer/core-elements",
+    "lodash": "~2.4.1",
+    "rsvp": "~3.0.13",
+    "core-icon": "Polymer/core-icon#~0.5.1",
+    "core-icons": "Polymer/core-icons#~0.5.1",
+    "core-iconset": "Polymer/core-iconset#~0.5.1",
+    "core-iconset-svg": "Polymer/core-iconset-svg#~0.5.1",
+    "web-animation": "https://github.com/web-animations/web-animations-js.git",
+    "jsonp": "https://github.com/OscarGodson/JSONP.git",
+    "app-router": "~2.3.2",
+    "task": "https://github.com/mozilla/task.js.git"
+  }
+}
