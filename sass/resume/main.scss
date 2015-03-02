@@ -1,0 +1,131 @@
+$lightBackground: rgb(240,240,240);
+
+body {
+  width: 21.0cm;
+  height: 29.7cm;
+}
+
+a[href] {
+  font-size: 10px;
+}
+
+.document {
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-family:  "Arial", Times, serif;;
+}
+
+li:hover {
+  background-color: black;
+  color: white;
+}
+
+
+
+@mixin listDot {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: black;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+@mixin detaiFormat {
+  font-weight: normal;
+  font-size: 90%;
+}
+
+.resume-section {
+  width: 100%;
+  margin-top: 10px;
+
+  header {
+    font-size: 130%;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.exp-entry {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  font-weight: bold;
+
+  .location {
+    flex: 2 0;
+    font-weight: bold;
+  }
+
+  .period {
+    flex: 1 0;
+    text-align: right;
+    font-weight: normal;
+    font-size: 15px;
+  }
+
+  ol {
+    background-color: grey;
+  }
+}
+
+.detail {
+  @include detaiFormat;
+}
+
+
+.skills {
+  padding-left: 0;
+
+  li {
+    display: inline;
+    line-height: 20px;
+  }
+
+  li::before {
+    @include listDot;
+  }
+}
+
+.work {
+  padding-left: 0;
+
+  ul {
+    background-color: $lightBackground;
+  }
+
+  li {
+    @include detaiFormat;
+    padding: 5px;
+  }
+}
+
+.projects {
+  padding-left: 10px;
+
+  section {
+    margin: 10px;
+  }
+
+  ul {
+    background-color: $lightBackground;
+  }
+}
+
+.projects > li {
+  list-style: none;
+  font-weight: bold;
+}
+
+.projects > li  li {
+  @include detaiFormat;
+  margin: 5px;
+}
