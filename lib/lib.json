@@ -1,0 +1,7 @@
+{
+    "index"     : "../../build/index",
+    "lodash"    : "../../bower_components/lodash/dist/lodash",
+    "rsvp"      : "../../bower_components/rsvp/rsvp",
+    "lib"       : "../../bower_components",
+    "jsonp"     : "../../bower_components/jsonp/JSONP-min"
+}
