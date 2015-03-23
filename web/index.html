@@ -7,12 +7,14 @@
     <title>Yi's Resume</title>
 
     <script src="../bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="../bower_components/requirejs/require.js"></script>
+    <script src="../bower_components/appgraphjs/build/AppGraph.js"></script>
 
-    <link rel="import" href="../app/elements/resume/resume-header.html">
-    <link rel="import" href="../app/elements/resume/education-section.html">
-    <link rel="import" href="../app/elements/resume/skill-section.html">
-    <link rel="import" href="../app/elements/resume/work-section.html">
-    <link rel="import" href="../app/elements/resume/project-section.html">
+    <link rel="import" href="../dist/elements/resume/resume-header.html">
+    <link rel="import" href="../dist/elements/resume/education-section.html">
+    <link rel="import" href="../dist/elements/resume/skill-section.html">
+    <link rel="import" href="../dist/elements/resume/work-section.html">
+    <link rel="import" href="../dist/elements/resume/project-section.html">
     <link rel="stylesheet" href="../stylesheets/resume/main.css">
     <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css">
 </head>
@@ -26,6 +28,20 @@
     <project-section></project-section>
 </article>
 
+
+<script>
+
+    require.config({
+        baseUrl: "../dist/",
+        paths: {
+            "rsvp": "../../bower_components/rsvp/rsvp.min"
+        }
+    });
+
+    require(["Graph"], function(Graph){
+        window.Graph = Graph;
+    })
+</script>
 
 </body>
 </html>

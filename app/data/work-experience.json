@@ -1,0 +1,69 @@
+[{
+    "name": "Sony Network Entertainment International",
+    "startTime": "09/01/2013",
+    "location": "San Francisco, CA USA",
+    "achievement": [{
+        "detail": "The UI of PlayStation was built with a web-component-like framework. I am responsible for creating and maintaining components including product tiles, promotion carousel, showing product details and many more.",
+        "short": "Implemented and maintained data-driven UI components on a WebGL-based platform.",
+        "photos": [
+            "assets/store_grid.jpg",
+            "assets/store_carousel.jpg",
+            "assets/store_pdp.jpg"
+        ]
+    },{
+        "detail": "Other than being responsible for UI components, I also work on handling store activities. Pre-order products on PS4 is one of the main feature I support. Others include making purchases, tracking user activities, and PlayStation Plus service.",
+        "short": "Programmed and maintained a web-based online store, which includes commerce activities (listing products, handling transaction, other user activities) and some social features on PS4.",
+        "photos": [
+            "assets/store0.jpg",
+            "assets/store_preorder.jpg",
+            "assets/store_psplus.jpg"
+        ]
+    },{
+        "detail": "A node-js layer is responsible for retrieving, re-formatting, and caching data if necessary. I designed and refactored the layer to reduce the amount of boilerplate code, increase testability, and readability.",
+        "short": "Refactored and maintained a node-js middle layer to accelerate data retrieval",
+        "photos": [
+            "assets/nodejs.jpg",
+            "assets/expressjs.jpg",
+            "assets/redis.jpg"
+        ]
+    }]
+},{
+    "name": "Mellmo Inc.",
+    "startTime": "01/01/2012",
+    "endTime": "08/31/2013",
+    "location": "Solana Beach, CA USA",
+    "achievement": [{
+        "detail": "Creating a data visualization chart library using the latest web technology is my main responsibility. I explored much cutting-edge HTML5 technology with heavy optimization on mobile platforms in order to provide users with the same or better user experience as on iOS",
+        "short": "Programmed an HTML5 based (with Canvas 2D/ WebGL) chart library for data visualization,which is highly optimized for mobile devices (Android, iOS.)",
+        "photos": [
+            "assets/roambi_area_chart.jpg",
+            "assets/roambi_pie_chart.jpg",
+            "assets/roambi_bar_chart.jpg"
+        ]
+    },{
+        "detail": "Implemented an HTML5 based (with CSS3 and Canvas 2D) spreadsheet viewer in object-oriented JavaScript with jQuery (data parsing, mosaic rendering engine, UI, and optimization on mobile devices.)",
+        "short": "Implemented an HTML5 based (with CSS3 and Canvas 2D) spreadsheet viewer in object-oriented JavaScript with jQuery (data parsing, mosaic rendering engine, UI, and optimization on mobile devices.)",
+        "photos": [
+        ]
+    }]
+},{
+    "name": "Swartz Center of Computational Neuroscience, UCSD",
+    "startTime": "01/01/2010",
+    "endTime": "11/31/2011",
+    "location": "La Jolla, CA, USA",
+    "achievement": [{
+        "detail": "Continued as my research project, the visualization system I developed is for generating high-quality brain images. Working closely with the neuroscience team, we looked for providing the user with a better brain-data visualization system based on ray tracing.",
+        "short": "Developed a brain visualization system in C++ with OpenGL for high quality rendered images",
+        "photos": [
+            "assets/brain_visualization.jpg",
+            "assets/brain_visualization2.jpg"
+        ]
+    },{
+        "detail": "Both processing neuroscience data and rendering high-quality ray-traced images can take much time. One of the challenge for this project is to make tasks run in parallel. CUDA and OpenMP were two major techniques applied to the project.",
+        "short": "Parallelized existed neuroscience research programs with CUDA",
+        "photos": [
+            "assets/cuda.jpg",
+            "assets/openmp.jpg"
+        ]
+    }]
+}]

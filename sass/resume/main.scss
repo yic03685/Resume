@@ -17,13 +17,6 @@ a[href] {
   font-family:  "Arial", Times, serif;;
 }
 
-li:hover {
-  background-color: black;
-  color: white;
-}
-
-
-
 @mixin listDot {
   content: "";
   display: inline-block;
@@ -138,4 +131,39 @@ li:hover {
 .projects > li  li {
   @include detaiFormat;
   margin: 5px;
+}
+
+.photo-list {
+  padding-left: 0;
+}
+
+.detailed-description {
+  list-style: none;
+}
+
+.detailed-description::first-letter {
+  font-size: 20px;
+}
+
+.photo-section {
+  overflow: scroll;
+  width: 100%;
+}
+
+.photo-item {
+  display: inline-block;
+  list-style: none;
+  width: 300px;
+}
+
+.photo {
+  width: 300px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+li.selectable:hover {
+  background-color: rgb(150,150,150);
+  color:white;
 }

@@ -18,8 +18,7 @@
     "core-iconset-svg": "Polymer/core-iconset-svg#~0.5.1",
     "web-animation": "https://github.com/web-animations/web-animations-js.git",
     "jsonp": "https://github.com/OscarGodson/JSONP.git",
-    "app-router": "~2.3.2",
-    "task": "https://github.com/mozilla/task.js.git",
-    "normalize.css": "~3.0.2"
+    "normalize.css": "~3.0.2",
+    "appgraphjs": "https://github.com/yic03685/AppGraphJS.git"
   }
 }

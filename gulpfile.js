@@ -23,7 +23,7 @@ var arrayFromPoly = require('array.from');
 const BUILD_DEST_DIR = 'build';
 const WEB_PATH = 'web';
 const XAVIER_PATH = "../XavierPlay/public/";
-const SCRIPT_BASE_URL = "app/es5";
+const SCRIPT_BASE_URL = "dist";
 const ICON_SET_SVG_PATH = "app/icons/svg";
 
 gulp.task('refresh', ['6to5', 'es5', 'sass']);
@@ -32,7 +32,7 @@ gulp.task('6to5', function () {
 
     var sourcemaps = require("gulp-sourcemaps");
 
-    return gulp.src(['app/es6/**/*.js', '!app/es6/**/*.es5.js'])
+    return gulp.src(['app/**/*.js', 'app/*.js'])
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(regenerator({
@@ -43,7 +43,7 @@ gulp.task('6to5', function () {
             modules: "amd"
         }))
         .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest('app/es5/'));
+        .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('es5', function () {
@@ -166,14 +166,14 @@ gulp.task("optimize", ['vulcanize'], function(){
 
     var paths = require("./lib/lib");
 
-    return gulp.src(BUILD_DEST_DIR +'/index.js')
-        .pipe(amdOptimize('index', {
-            paths: paths,
-            baseUrl: SCRIPT_BASE_URL
-        }))
-        .pipe(order([
-            "index.js"
-        ]))
+    return gulp.src('build/index.js')
+//        .pipe(amdOptimize('index', {
+//            paths: paths,
+//            baseUrl: 'dist'
+//        }))
+//        .pipe(order([
+//            "index.js"
+//        ]))
         .pipe(concat("index.js"))
         .pipe(uglify())
         .pipe(gulp.dest(BUILD_DEST_DIR));
@@ -185,7 +185,7 @@ gulp.task("copy_to_xavier", ['optimize'], function(){
         .pipe(gulp.dest(XAVIER_PATH));
 });
 
-gulp.task('build', ['vulcanize', 'optimize', 'copy_to_xavier']);
+gulp.task('build', ['vulcanize', 'optimize']);
 
 //-----------------------------------------------------------------------------------------------
 //
@@ -219,7 +219,7 @@ gulp.task('watch', ['server'], function() {
     var server = livereload();
     gulp.watch([WEB_PATH + '/**', "app/es5/**/*.js"]).on('change', server.changed);
 
-    var watcher = gulp.watch(['app/es6/**/*.js', 'app/es6/*.js'], ['6to5', 'es5']);
+    var watcher = gulp.watch(['app/**/*.js', 'app/*.js'], ['6to5', 'es5']);
     watcher.on('change', function(event) {
         console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
     });

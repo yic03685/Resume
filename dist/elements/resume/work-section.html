@@ -1,0 +1,66 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../dist/elements/resume/resume-section.html">
+<link rel="import" href="../../../dist/elements/resume/exp-entry.html">
+
+<polymer-element name="work-section">
+    <template>
+        <link rel="stylesheet" type="text/css" href="../../../stylesheets/resume/main.css">
+        <resume-section title="work experience">
+            <ol class="work">
+                <template repeat="{{entry, i in entries}}">
+                    <exp-entry selectable="{{true}}" index="{{i}}" name={{entry.info.name}} startTime={{entry.info.startTime}} endTime={{entry.info.endTime}} location={{entry.info.location}}  on-click="{{onClick}}">
+                        <template if="{{!entry.expanded}}">
+                            <ul>
+                                <template repeat="{{en in entry.info.achievement}}">
+                                    <li>{{en.short}}</li>
+                                </template>
+                            </ul>
+                        </template>
+                        <template if="{{entry.expanded}}">
+                                <template repeat="{{achievement in entry.info.achievement }}">
+                                    <li class="detailed-description">{{achievement.detail}}</li>
+                                    <div class="photo-section">
+                                        <ul class="photo-list" style="width:{{entry.photoListWidth}}px">
+                                            <template repeat="{{photo in achievement.photos}}">
+                                                <li class="photo-item">
+                                                    <div class="photo" style="background-image: url({{photo}})"></div>
+                                                </li>
+                                            </template>
+                                        </ul>
+                                    </div>
+                                </template>
+                            </ul>
+                        </template>
+                    </exp-entry>
+                </template>
+            </ol>
+        </resume-section>
+    </template>
+
+
+    <script>
+        var workItem = [];
+        Polymer("work-section", {
+
+            ready: function() {
+              require(["models/WorkList", "models/WorkItem"], function(){
+
+                  workItem = Graph.get("WorkItem");
+                  Graph.mirror(this.entries, "WorkItem");
+                  window.model = this.entries;
+
+              }.bind(this));
+            },
+
+            onClick: function(evt) {
+                var index = evt.currentTarget.index;
+                workItem[index].switch();
+
+
+            },
+
+            entries: []
+        });
+
+    </script>
+</polymer-element>
