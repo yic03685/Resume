@@ -1,7 +1,8 @@
 $lightBackground: rgb(240,240,240);
+$selectedBackground: rgb(150,150,150);
 
 body {
-  width: 21.0cm;
+  width: 100vw;
   height: 29.7cm;
 }
 
@@ -13,7 +14,7 @@ a[href] {
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
-
+  width: 21.0cm;
   font-family:  "Arial", Times, serif;;
 }
 
@@ -28,6 +29,7 @@ a[href] {
   border-radius: 2px;
   margin-right: 5px;
   margin-left: 10px;
+  vertical-align: middle;
 }
 
 @mixin detaiFormat {
@@ -87,10 +89,35 @@ a[href] {
   li {
     display: inline;
     line-height: 20px;
+    cursor: pointer;
+  }
+
+  span {
+    vertical-align: middle;
+  }
+
+  li:hover {
+    background-color: $selectedBackground;
+    color: white;
   }
 
   li::before {
     @include listDot;
+  }
+
+  li.skill-item-expanded {
+    display: block;
+    line-height: 35px;
+  }
+
+  .skill-item-thumbnail {
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+  }
+
+  .skill-item-name {
+    font-weight: bold;
   }
 }
 
@@ -159,11 +186,119 @@ a[href] {
 .photo {
   width: 300px;
   height: 200px;
-  background-size: cover;
-  background-position: center;
+  background-size: 100% 100%;
 }
 
 li.selectable:hover {
-  background-color: rgb(150,150,150);
+  background-color: $selectedBackground;
   color:white;
+  cursor: pointer;
+}
+
+.popup-container {
+  background-color: red;
+  position: absolute;
+  background-size: 100% 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.popup-container.closed {
+  transition: none;
+  display: none;
+}
+
+.popup-wrapper {
+  position: fixed;
+  left:0;
+  top:0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+.popup-wrapper.readyOpen {
+  display: block;
+}
+
+.popup-wrapper.open {
+  display: block;
+}
+
+.popup-wrapper.readyClose {
+  display: block;
+}
+
+.popup-background {
+  position: absolute;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.popup-background.open {
+  opacity: 0.9;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.popup-screen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.popup-screen.open{
+  display: block;
+  opacity: 1;
+}
+
+.detail-photo {
+  width: 900px;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -300px 0 0 -450px;
+  background-size: 100% 100%;
+}
+
+.detail-description {
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 320px 0 0 -450px;
+}
+
+.icon-cancel {
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  left:50%;
+  top:50%;
+  margin: -319px 0 0 431px;
+}
+
+.icon-cancel:hover path {
+  fill: white;
+}
+
+.path1 {
+  fill: grey;
+}
+
+.path2 {
+  fill: grey;
 }

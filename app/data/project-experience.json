@@ -1,7 +1,6 @@
 [{
-    "name": "Sony Network Entertainment International",
-    "startTime": "09/01/2013",
-    "location": "San Francisco, CA USA",
+    "name": "Flickr App on PlayStation4",
+    "startTime": "2014",
     "achievement": [{
         "detail": "The UI of PlayStation was built with a web-component-like framework. I am responsible for creating and maintaining components including product tiles, promotion carousel, showing product details and many more.",
         "short": "Implemented and maintained data-driven UI components on a WebGL-based platform.",
@@ -54,26 +53,6 @@
         "detail": "Implemented an HTML5 based (with CSS3 and Canvas 2D) spreadsheet viewer in object-oriented JavaScript with jQuery (data parsing, mosaic rendering engine, UI, and optimization on mobile devices.)",
         "short": "Implemented an HTML5 based (with CSS3 and Canvas 2D) spreadsheet viewer in object-oriented JavaScript with jQuery (data parsing, mosaic rendering engine, UI, and optimization on mobile devices.)",
         "photos": [
-        ]
-    }]
-},{
-    "name": "Swartz Center of Computational Neuroscience, UCSD",
-    "startTime": "01/01/2010",
-    "endTime": "11/31/2011",
-    "location": "La Jolla, CA, USA",
-    "achievement": [{
-        "detail": "Continued as my research project, the visualization system I developed is for generating high-quality brain images. Working closely with the neuroscience team, we looked for providing the user with a better brain-data visualization system based on ray tracing.",
-        "short": "Developed a brain visualization system in C++ with OpenGL for high quality rendered images",
-        "photos": [
-            "assets/brain_visualization.jpg",
-            "assets/brain_visualization2.jpg"
-        ]
-    },{
-        "detail": "Both processing neuroscience data and rendering high-quality ray-traced images can take much time. One of the challenge for this project is to make tasks run in parallel. CUDA and OpenMP were two major techniques applied to the project.",
-        "short": "Parallelized existed neuroscience research programs with CUDA",
-        "photos": [
-            "assets/cuda.jpg",
-            "assets/openmp.jpg"
         ]
     }]
 }]

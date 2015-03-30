@@ -1,0 +1,25 @@
+[{
+    "name": "JavaScript/CoffeeScript",
+     "thumbnail": "javascript",
+    "experience": "Used in day to day developement"
+},{
+    "name": "HTML",
+    "thumbnail": "html",
+    "experience": "Used in day to day developement"
+},{
+    "name": "CSS",
+    "thumbnail": "css",
+    "experience": "Used in day to day developement"
+},{
+    "name": "Java/Scala",
+    "thumbnail": "scala",
+    "experience": "Used in day to day developement"
+},{
+    "name": "Angular",
+    "thumbnail": "angular",
+    "experience": "Used in day to day developement"
+},{
+    "name": "Dart",
+    "thumbnail": "dart",
+    "experience": "Used in day to day developement"
+}]

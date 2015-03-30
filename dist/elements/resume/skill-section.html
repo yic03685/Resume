@@ -6,17 +6,40 @@
         <link rel="stylesheet" type="text/css" href="../../../stylesheets/resume/main.css">
         <resume-section title="skills">
             <ul class="skills">
-                <template repeat="{{skill in skills}}">
-                    <li>{{skill}}</li>
+                <template repeat="{{entry, index in entries}}">
+                    <template if="{{entry.expanded}}">
+                        <li class="skill-item-expanded" data-index={{index}} on-click="{{onClick}}">
+                            <img class="skill-item-thumbnail" src="assets/skills/{{entry.info.thumbnail}}.png"/>
+                            <span class="skill-item-name">{{entry.info.name}}:</span>
+                            <span>{{entry.info.experience}}</span>
+                        </li>
+                    </template>
+                    <template if="{{!entry.expanded}}">
+                        <li data-index={{index}} on-click="{{onClick}}">{{entry.info.name}}</li>
+                    </template>
                 </template>
             </ul>
         </resume-section>
     </template>
 
     <script>
+        var skillItems = [];
         Polymer("skill-section", {
 
-            skills: ["JavaScript/CoffeeScript", "CSS/SASS", "HTML", "C/C++", "JAVA/Scala", "jQuery/Angular/Polymer", "Gulp/Grunt", "Mocha", "OpenGL/WebGL", "Cude/OpenCL"]
+            ready: function() {
+                require(["models/SkillList", "models/SkillItem"], function(){
+                    skillItems = Graph.get("SkillItem");
+                    Graph.mirror(this.entries, "SkillItem");
+                    window.test = this.entries;
+                }.bind(this));
+            },
+
+            onClick: function(evt) {
+                var index = evt.currentTarget.dataset.index;
+                skillItems[index].switch();
+            },
+
+            entries: []
         });
     </script>
 </polymer-element>

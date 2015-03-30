@@ -9,18 +9,23 @@
     <script src="../bower_components/webcomponentsjs/webcomponents.min.js"></script>
     <script src="../bower_components/requirejs/require.js"></script>
     <script src="../bower_components/appgraphjs/build/AppGraph.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
     <link rel="import" href="../dist/elements/resume/resume-header.html">
     <link rel="import" href="../dist/elements/resume/education-section.html">
     <link rel="import" href="../dist/elements/resume/skill-section.html">
     <link rel="import" href="../dist/elements/resume/work-section.html">
     <link rel="import" href="../dist/elements/resume/project-section.html">
+    <link rel="import" href="../dist/elements/resume/popup-container.html">
+    <link rel="import" href="../dist/elements/resume/popup-content.html">
     <link rel="stylesheet" href="../stylesheets/resume/main.css">
     <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css">
 </head>
 <body>
 
 <article class="document">
+    <popup-container></popup-container>
+    <popup-content></popup-content>
     <resume-header></resume-header>
     <education-section></education-section>
     <skill-section></skill-section>
@@ -30,11 +35,11 @@
 
 
 <script>
-
     require.config({
         baseUrl: "../dist/",
         paths: {
-            "rsvp": "../../bower_components/rsvp/rsvp.min"
+            "rsvp": "../../bower_components/rsvp/rsvp.min",
+            "rx": "../../bower_components/rxjs/dist/rx.all"
         }
     });
 

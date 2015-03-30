@@ -2,25 +2,16 @@
  * Created by yi on 2015/3/21.
  */
 
-import HttpClient from "common/HttpClient";
+import List from "templates/List";
+import Popup from "models/Popup";
 
-const DATA_URL = "http://localhost:8080/app/data/work-experience.json";
+const DATA_URL = "../app/data/work-experience.json";
 
-class WorkList {
+class WorkList extends List {
 
     constructor() {
-
-    }
-
-    ready() {
-        this.getRequest(DATA_URL).then(data=>{
-            this.items = data;
-        });
-
-        this.items = [{}];
+        this.dataUrl = DATA_URL;
     }
 }
 
-Object.assign(WorkList.prototype, HttpClient);
-
-Graph.put("WorkList", WorkList);
+Graph.put("WorkList", WorkList, "Popup");

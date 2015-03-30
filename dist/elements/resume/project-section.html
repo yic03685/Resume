@@ -6,14 +6,30 @@
     <template>
         <link rel="stylesheet" type="text/css" href="../../../stylesheets/resume/main.css">
         <resume-section title="selected projects">
-            <ol class="projects">
-                <template repeat="{{project in projects}}">
-                    <exp-entry name={{project.name}} startTime={{project.startTime}}>
-                        <ul>
-                            <template repeat="{{en in project.details }}">
-                                <li>{{en}}</li>
+            <ol class="work">
+                <template repeat="{{entry, i in entries}}">
+                    <exp-entry selectable="{{true}}" index="{{i}}" name={{entry.info.name}} startTime={{entry.info.startTime}} endTime={{entry.info.endTime}} location={{entry.info.location}}  on-click="{{onClick}}">
+                        <template if="{{!entry.expanded}}">
+                            <ul>
+                                <template repeat="{{en in entry.info.achievement}}">
+                                    <li>{{en.short}}</li>
+                                </template>
+                            </ul>
+                        </template>
+                        <template if="{{entry.expanded}}">
+                            <template repeat="{{achievement in entry.info.achievement }}">
+                                <li class="detailed-description">{{achievement.detail}}</li>
+                                <div class="photo-section">
+                                    <ul class="photo-list" style="width:{{entry.photoListWidth}}px">
+                                        <template repeat="{{photo in achievement.photos}}">
+                                            <li class="photo-item">
+                                                <div on-click="{{onZoomIn}}" data-description="{{photo.description}}" url={{photo.url}} class="photo" style="background-image: url(assets/thumbnails/{{photo.url}}.jpg)"></div>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
                             </template>
-                        </ul>
+                        </template>
                     </exp-entry>
                 </template>
             </ol>
@@ -22,25 +38,43 @@
 
     <script>
 
+        var projectItem = [];
         Polymer("project-section", {
-            projects: [
-                {
-                    name: "Flickr App on PlayStation 4",
-                    startTime: "2014",
-                    details: [
-                        "A photo gallery app powered by backbone.js",
-                        "Dynamically loads photos with Flickr Photo API"
-                    ]
-                },
-                {
-                    name: "Functional Reactive Programming Library",
-                    startTime: "2014",
-                    details: [
-                        "A functional reactive programming library written in dart",
-                        "Implemented APIs compatible with Bacon.js and a tool generating templates automatically with Angular"
-                    ]
-                }
-            ]
+
+            ready: function() {
+                require(["models/ProjectList", "models/ProjectItem"], function(){
+                    projectItem = Graph.get("ProjectItem");
+                    Graph.mirror(this.entries, "ProjectItem");
+                }.bind(this));
+            },
+
+            onZoomIn: function(evt) {
+                var target = evt.currentTarget;
+                var listLeft = $(target).closest('.photo-section').scrollLeft();
+                var documentTop = $('body').scrollTop();
+
+                projectItem[0].emit("open", {
+                    url: target.getAttribute("url"),
+                    location:{
+                        left: target.offsetLeft - listLeft,
+                        top: target.offsetTop - documentTop,
+                        width: target.offsetWidth,
+                        height: target.offsetHeight
+                    },
+                    description: target.getAttribute("data-description")
+                });
+                evt.stopPropagation();
+            },
+
+            onClick: function(evt) {
+                var index = evt.currentTarget.index;
+                debugger;
+                projectItem[index].switch();
+
+
+            },
+
+            entries: []
         });
 
     </script>

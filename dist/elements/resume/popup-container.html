@@ -1,0 +1,40 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="popup-container">
+    <template>
+        <link rel="stylesheet" type="text/css" href="../../../stylesheets/resume/main.css">
+        <template bind="{{model as m}}">
+            <div class="popup-wrapper {{m.computedState}}">
+                <div class="popup-background {{m.computedState}}"></div>
+                <div class="wrapper" style="transform:translate3d({{m.geom.translate}})">
+                    <div class="popup-container {{m.computedState}}"
+                         style="transform:translate3d({{m.geom.centerTranslate}}) scale3d({{m.geom.scale}}); width:{{m.geom.width}}px; height:{{m.geom.height}}px; background-image:url({{m.posterUrl}})";>
+                </div>
+                </div>
+            </div>
+        </template>
+    </template>
+
+    <script>
+
+        var popup;
+        Polymer("popup-container", {
+            ready: function() {
+                require(["models/Popup"], function(){
+
+                    popup = Graph.get("Popup");
+                    Graph.mirror(this.model, "Popup");
+                    window.model2 = this.model;
+
+                }.bind(this));
+            },
+
+            onClose: function(evt) {
+                popup.close();
+            },
+
+            model: {}
+        });
+
+    </script>
+</polymer-element>

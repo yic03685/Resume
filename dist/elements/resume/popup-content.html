@@ -1,0 +1,47 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="popup-content">
+    <template>
+        <link rel="stylesheet" type="text/css" href="../../../stylesheets/resume/main.css">
+        <template bind="{{model as m}}">
+
+            <div class="popup-screen {{m.style}}" on-click="{{onClose}}">
+                <div class="detail-photo" style="background-image: url({{m.photoUrl}})" on-click="{{noop}}"></div>
+                <svg id="icon-cancel-circle" class="icon-cancel" viewBox="0 0 1024 1024" on-click="{{onClose}}">
+                    <title>cancel-circle</title>
+                    <path class="path1 cancel" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM512 928c-229.75 0-416-186.25-416-416s186.25-416 416-416 416 186.25 416 416-186.25 416-416 416z"></path>
+                    <path class="path2 cancel" d="M672 256l-160 160-160-160-96 96 160 160-160 160 96 96 160-160 160 160 96-96-160-160 160-160z"></path>
+                </svg>
+                <p class="detail-description" on-click="{{noop}}">
+                    {{m.description}}
+                </p>
+            </div>
+        </template>
+    </template>
+
+    <script>
+
+        var popupContent;
+        Polymer("popup-content", {
+            ready: function() {
+                require(["models/PopupContent"], function(){
+
+                    popupContent = Graph.get("PopupContent");
+                    Graph.mirror(this.model, "PopupContent");
+                }.bind(this));
+            },
+
+            onClose: function(evt) {
+                popupContent.close();
+            },
+
+            noop: function(evt) {
+              evt.stopPropagation();
+            },
+
+            model:{}
+
+        });
+
+    </script>
+</polymer-element>
