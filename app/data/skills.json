@@ -15,11 +15,23 @@
     "thumbnail": "scala",
     "experience": "Used in day to day developement"
 },{
+    "name": "Polymer",
+    "thumbnail": "polymer",
+    "experience": "Used in day to day developement"
+},{
     "name": "Angular",
     "thumbnail": "angular",
     "experience": "Used in day to day developement"
 },{
     "name": "Dart",
     "thumbnail": "dart",
+    "experience": "Used in day to day developement"
+},{
+    "name": "Gulp/Grunt",
+    "thumbnail": "gulp",
+    "experience": "Used in day to day developement"
+},{
+    "name": "Mocha",
+    "thumbnail": "mocha",
     "experience": "Used in day to day developement"
 }]

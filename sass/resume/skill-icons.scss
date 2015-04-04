@@ -1,0 +1,37 @@
+@import '../sprite';
+
+.javascript-icon {
+  @include sprite($javascript);
+}
+
+.html-icon {
+  @include sprite($html);
+}
+
+.css-icon {
+  @include sprite($css);
+}
+
+.scala-icon {
+  @include sprite($scala);
+}
+
+.polymer-icon {
+  @include sprite($polymer);
+}
+
+.dart-icon {
+  @include sprite($dart);
+}
+
+.angular-icon {
+  @include sprite($angular);
+}
+
+.gulp-icon {
+  @include sprite($gulp);
+}
+
+.mocha-icon {
+  @include sprite($mocha);
+}

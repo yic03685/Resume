@@ -18,6 +18,8 @@ var concat = require('gulp-concat');
 var order = require('gulp-order');
 var livereload = require('gulp-livereload');
 var arrayFromPoly = require('array.from');
+var gulpif = require('gulp-if');
+var sprite = require('css-sprite').stream;
 
 
 const BUILD_DEST_DIR = 'build';
@@ -160,6 +162,18 @@ gulp.task("vulcanize", function(){
             inline: true
         }))
         .pipe(gulp.dest(BUILD_DEST_DIR));
+});
+
+// generate sprite.png and _sprite.scss
+gulp.task('sprites', function () {
+    return gulp.src('./web/assets/skills/*.png')
+        .pipe(sprite({
+            name: 'sprite',
+            style: 'sprite.scss',
+            cssPath: '../../web/assets/',
+            processor: 'scss'
+        }))
+        .pipe(gulpif('*.png', gulp.dest('./web/assets'), gulp.dest('./sass')))
 });
 
 gulp.task("optimize", ['vulcanize'], function(){

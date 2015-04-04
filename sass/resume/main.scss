@@ -1,5 +1,9 @@
+@import 'skill-icons';
+
 $lightBackground: rgb(240,240,240);
-$selectedBackground: rgb(150,150,150);
+$selectedBackground: rgb(240,240,240);
+$selectedForeground: rgb(0,0,0);
+$selectedBorderColor: rgb(220,220,220);
 
 body {
   width: 100vw;
@@ -8,6 +12,10 @@ body {
 
 a[href] {
   font-size: 10px;
+}
+
+.clear {
+  clear:both;
 }
 
 .document {
@@ -86,10 +94,17 @@ a[href] {
 .skills {
   padding-left: 0;
 
+  ul {
+    overflow: auto;
+  }
+
   li {
-    display: inline;
-    line-height: 20px;
+    padding: 5px;
+    margin: 0 10px;
+    float: left;
+    line-height: 30px;
     cursor: pointer;
+    list-style: disc;
   }
 
   span {
@@ -98,11 +113,9 @@ a[href] {
 
   li:hover {
     background-color: $selectedBackground;
-    color: white;
-  }
-
-  li::before {
-    @include listDot;
+    color: $selectedForeground;
+    border: 1px $selectedBorderColor solid;
+    padding: 4px;
   }
 
   li.skill-item-expanded {
@@ -111,9 +124,9 @@ a[href] {
   }
 
   .skill-item-thumbnail {
-    height: 30px;
-    width: 30px;
     vertical-align: middle;
+    display: inline-block;
+    border: none;
   }
 
   .skill-item-name {
@@ -189,10 +202,16 @@ a[href] {
   background-size: 100% 100%;
 }
 
-li.selectable:hover {
-  background-color: $selectedBackground;
-  color:white;
+li.selectable {
+  padding: 3px;
   cursor: pointer;
+}
+
+li.selectable:hover {
+  padding:2px;
+  border: 1px $selectedBorderColor solid;
+  background-color: $selectedBackground;
+  color:$selectedForeground;
 }
 
 .popup-container {

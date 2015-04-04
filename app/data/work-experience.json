@@ -19,7 +19,7 @@
         "detail": "Other than being responsible for UI components, I also work on handling store activities. Pre-order products on PS4 is one of the main feature I support. Others include making purchases, tracking user activities, and PlayStation Plus service.",
         "short": "Programmed and maintained a web-based online store, which includes commerce activities (listing products, handling transaction, other user activities) and some social features on PS4.",
         "photos": [{
-            "url": "store_carousel",
+            "url": "store_preorder",
             "description": "Test description"
         }, {
             "url": "store_carousel",
@@ -31,11 +31,16 @@
     },{
         "detail": "A node-js layer is responsible for retrieving, re-formatting, and caching data if necessary. I designed and refactored the layer to reduce the amount of boilerplate code, increase testability, and readability.",
         "short": "Refactored and maintained a node-js middle layer to accelerate data retrieval",
-        "photos": [
-            "assets/nodejs.jpg",
-            "assets/expressjs.jpg",
-            "assets/redis.jpg"
-        ]
+        "photos": [{
+            "url": "nodejs",
+            "description": "Test description"
+        }, {
+            "url": "redis",
+            "description": "Test description"
+        }, {
+            "url": "express",
+            "description": "Test description"
+        }]
     }]
 },{
     "name": "Mellmo Inc.",
@@ -45,11 +50,16 @@
     "achievement": [{
         "detail": "Creating a data visualization chart library using the latest web technology is my main responsibility. I explored much cutting-edge HTML5 technology with heavy optimization on mobile platforms in order to provide users with the same or better user experience as on iOS",
         "short": "Programmed an HTML5 based (with Canvas 2D/ WebGL) chart library for data visualization,which is highly optimized for mobile devices (Android, iOS.)",
-        "photos": [
-            "assets/roambi_area_chart.jpg",
-            "assets/roambi_pie_chart.jpg",
-            "assets/roambi_bar_chart.jpg"
-        ]
+        "photos": [{
+            "url": "area_chart",
+            "description": "Test description"
+        }, {
+            "url": "redis",
+            "description": "Test description"
+        }, {
+            "url": "express",
+            "description": "Test description"
+        }]
     },{
         "detail": "Implemented an HTML5 based (with CSS3 and Canvas 2D) spreadsheet viewer in object-oriented JavaScript with jQuery (data parsing, mosaic rendering engine, UI, and optimization on mobile devices.)",
         "short": "Implemented an HTML5 based (with CSS3 and Canvas 2D) spreadsheet viewer in object-oriented JavaScript with jQuery (data parsing, mosaic rendering engine, UI, and optimization on mobile devices.)",

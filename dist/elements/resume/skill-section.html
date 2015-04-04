@@ -8,17 +8,20 @@
             <ul class="skills">
                 <template repeat="{{entry, index in entries}}">
                     <template if="{{entry.expanded}}">
+                        <div class="clear"/>
                         <li class="skill-item-expanded" data-index={{index}} on-click="{{onClick}}">
-                            <img class="skill-item-thumbnail" src="assets/skills/{{entry.info.thumbnail}}.png"/>
+                            <img class="skill-item-thumbnail icon {{entry.info.thumbnail}}-icon"/>
                             <span class="skill-item-name">{{entry.info.name}}:</span>
                             <span>{{entry.info.experience}}</span>
                         </li>
+                        <div class="clear"/>
                     </template>
                     <template if="{{!entry.expanded}}">
                         <li data-index={{index}} on-click="{{onClick}}">{{entry.info.name}}</li>
                     </template>
                 </template>
             </ul>
+            <div class="clear"/>
         </resume-section>
     </template>
 
