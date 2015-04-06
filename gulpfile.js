@@ -22,7 +22,7 @@ var gulpif = require('gulp-if');
 var sprite = require('css-sprite').stream;
 
 
-const BUILD_DEST_DIR = 'build';
+const BUILD_DEST_DIR = 'resume';
 const WEB_PATH = 'web';
 const XAVIER_PATH = "../XavierPlay/public/";
 const SCRIPT_BASE_URL = "dist";
