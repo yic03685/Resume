@@ -65,6 +65,8 @@ class Popup {
         );
 
         this.description = "";
+        this.likeCount = 0;
+        this.photoId = "";
 
         this.posterUrl = this.observe("poster").map(x=>"assets/thumbnails/"+x+".jpg");
     }
@@ -75,6 +77,8 @@ class Popup {
         this.to = {left:417, top:400, width:600, height:400};
         this.state = "open";
         this.description = info.description;
+        this.likeCount = info.likeCount;
+        this.photoId = info.photoId;
     }
 
     close() {

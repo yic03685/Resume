@@ -11,19 +11,19 @@
                     <exp-entry selectable="{{true}}" index="{{i}}" name={{entry.info.name}} startTime={{entry.info.startTime}} endTime={{entry.info.endTime}} location={{entry.info.location}}  on-click="{{onClick}}">
                         <template if="{{!entry.expanded}}">
                             <ul>
-                                <template repeat="{{en in entry.info.achievement}}">
-                                    <li>{{en.short}}</li>
+                                <template repeat="{{en in entry.info.achievements}}">
+                                    <li>{{en.shortDescription}}</li>
                                 </template>
                             </ul>
                         </template>
                         <template if="{{entry.expanded}}">
-                            <template repeat="{{achievement in entry.info.achievement }}">
-                                <li class="detailed-description">{{achievement.detail}}</li>
+                            <template repeat="{{achievement in entry.info.achievements }}">
+                                <li class="detailed-description">{{achievement.longDescription}}</li>
                                 <div class="photo-section">
                                     <ul class="photo-list" style="width:{{entry.photoListWidth}}px">
                                         <template repeat="{{photo in achievement.photos}}">
                                             <li class="photo-item">
-                                                <div on-click="{{onZoomIn}}" data-description="{{photo.description}}" url={{photo.url}} class="photo" style="background-image: url(assets/thumbnails/{{photo.url}}.jpg)"></div>
+                                                <div on-click="{{onZoomIn}}" data-photo-id="{{photo.id}}" data-likeCount="{{photo.likeCount}}" data-description="{{photo.description}}" url={{photo.src}} class="photo" style="background-image: url(assets/thumbnails/{{photo.src}}.jpg)"></div>
                                             </li>
                                         </template>
                                     </ul>
@@ -46,6 +46,8 @@
                   workItem = Graph.get("WorkItem");
                   Graph.mirror(this.entries, "WorkItem");
 
+                  window.model = this.entries;
+
               }.bind(this));
             },
 
@@ -62,7 +64,9 @@
                         width: target.offsetWidth,
                         height: target.offsetHeight
                     },
-                    description: target.getAttribute("data-description")
+                    description: target.getAttribute("data-description"),
+                    likeCount: target.getAttribute("data-likeCount"),
+                    photoId: target.getAttribute("data-photo-id")
                 });
                 evt.stopPropagation();
             },

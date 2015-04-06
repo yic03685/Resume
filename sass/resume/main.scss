@@ -215,7 +215,6 @@ li.selectable:hover {
 }
 
 .popup-container {
-  background-color: red;
   position: absolute;
   background-size: 100% 100%;
   transition: transform 0.5s ease-in-out;
@@ -298,7 +297,24 @@ li.selectable:hover {
   position: absolute;
   left: 50%;
   top: 50%;
-  margin: 320px 0 0 -450px;
+  margin: 350px 0 0 -450px;
+}
+
+.detail-like-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 320px -450px;
+  width: 900px;
+  text-align: right;
+}
+
+.detail-like {
+  color: white;
+}
+
+.detail-like .counter {
+  color: red;
 }
 
 .icon-cancel {
@@ -320,4 +336,20 @@ li.selectable:hover {
 
 .path2 {
   fill: grey;
+}
+
+#icon-like {
+  width: 30px;
+  height: 30px;
+  vertical-align: baseline;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#icon-like path {
+  fill: white;
+}
+
+#icon-like.liked path {
+  fill: red;
 }
