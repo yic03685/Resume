@@ -166,14 +166,14 @@ gulp.task("vulcanize", function(){
 
 // generate sprite.png and _sprite.scss
 gulp.task('sprites', function () {
-    return gulp.src('./web/assets/skills/*.png')
+    return gulp.src('./'+BUILD_DEST_DIR+'/assets/skills/*.png')
         .pipe(sprite({
             name: 'sprite',
             style: 'sprite.scss',
-            cssPath: '../../web/assets/',
+            cssPath: '../../'+BUILD_DEST_DIR+'/assets/',
             processor: 'scss'
         }))
-        .pipe(gulpif('*.png', gulp.dest('./web/assets'), gulp.dest('./sass')))
+        .pipe(gulpif('*.png', gulp.dest('./'+BUILD_DEST_DIR+'/assets'), gulp.dest('./sass')))
 });
 
 gulp.task("optimize", ['vulcanize'], function(){
