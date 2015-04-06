@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Photo": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Achievement": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "WorkItem": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Work": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "ProjectItem": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Project": {
+    "dataSource": null,
+    "public": true
+  }
+}

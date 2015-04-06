@@ -1,0 +1,27 @@
+{
+  "name": "Achievement",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "longDescription": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "photos": {
+      "type": "hasMany",
+      "model": "Photo",
+      "foreignKey": "achievementId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}
