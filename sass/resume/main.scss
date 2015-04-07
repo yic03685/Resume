@@ -4,6 +4,8 @@ $lightBackground: rgb(240,240,240);
 $selectedBackground: rgb(240,240,240);
 $selectedForeground: rgb(0,0,0);
 $selectedBorderColor: rgb(220,220,220);
+$popupWidth: 800px;
+$popupHeight: 530px;
 
 body {
   width: 100vw;
@@ -283,12 +285,12 @@ li.selectable:hover {
 }
 
 .detail-photo {
-  width: 900px;
-  height: 600px;
+  width: $popupWidth;
+  height: $popupHeight;
   position: absolute;
   left: 50%;
   top: 50%;
-  margin: -300px 0 0 -450px;
+  margin: (-$popupHeight/2) (-$popupWidth/2);
   background-size: 100% 100%;
 }
 
@@ -297,15 +299,15 @@ li.selectable:hover {
   position: absolute;
   left: 50%;
   top: 50%;
-  margin: 350px 0 0 -450px;
+  margin: ($popupHeight/2+50) (-$popupWidth/2);
 }
 
 .detail-like-container {
   position: absolute;
   left: 50%;
   top: 50%;
-  margin: 320px -450px;
-  width: 900px;
+  margin: ($popupHeight/2+20) (-$popupWidth/2);
+  width: $popupWidth;
   text-align: right;
 }
 
@@ -323,7 +325,7 @@ li.selectable:hover {
   position: absolute;
   left:50%;
   top:50%;
-  margin: -319px 0 0 431px;
+  margin: (-$popupHeight/2-19) ($popupWidth/2-19);
 }
 
 .icon-cancel:hover path {

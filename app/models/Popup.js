@@ -58,7 +58,7 @@ class Popup {
             } : {
                 width: location.from.width,
                 height: location.from.height,
-                scale: "3, 3, 3",
+                scale: "2.66, 2.66, 2.66",
                 translate:  "50%, 50%, 0",
                 centerTranslate: "-50%, -50%, 0"
             }
