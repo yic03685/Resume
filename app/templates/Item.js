@@ -14,7 +14,7 @@ class Item {
         this.info = imports["initialValue"];
         this.expanded = false;
 
-        this.photoListWidth = this.info.map(x=>x.achievement)
+        this.photoListWidth = this.info.map(x=>x.achievements)
             .filter(x=>x)
             .map(ls=>ls[0].photos.length)
             .map(x=>x*PHOTO_ITEM_WIDTH + PHOTO_LIST_MARGIN);

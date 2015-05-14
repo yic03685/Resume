@@ -1,11 +1,11 @@
 [{
     "name": "JavaScript/CoffeeScript",
      "thumbnail": "javascript",
-    "experience": "Used in day to day developement"
+    "experience": "It is the language that I use the most. I have experience in both the client side and the server side with nodejs."
 },{
     "name": "HTML",
     "thumbnail": "html",
-    "experience": "Used in day to day developement"
+    "experience": "Work intensively with many HTML5 features"
 },{
     "name": "CSS",
     "thumbnail": "css",
@@ -13,11 +13,15 @@
 },{
     "name": "Java/Scala",
     "thumbnail": "scala",
-    "experience": "Used in day to day developement"
+    "experience": "Have programmed a backend web server in Scala with Play"
 },{
-    "name": "Polymer",
+    "name": "Rx/Bacon",
     "thumbnail": "polymer",
-    "experience": "Used in day to day developement"
+    "experience": "Have done many projects with Polymer as the presentation layer (view)"
+},{
+    "name": "Polymer/React",
+    "thumbnail": "polymer",
+    "experience": "Have done many projects with Polymer as the presentation layer (view)"
 },{
     "name": "Angular",
     "thumbnail": "angular",

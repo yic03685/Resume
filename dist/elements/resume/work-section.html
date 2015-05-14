@@ -18,7 +18,7 @@
                         </template>
                         <template if="{{entry.expanded}}">
                             <template repeat="{{achievement in entry.info.achievements }}">
-                                <li class="detailed-description">{{achievement.longDescription}}</li>
+                                <li class="detailed-description">{{achievement.shortDescription}}</li>
                                 <div class="photo-section">
                                     <ul class="photo-list" style="width:{{entry.photoListWidth}}px">
                                         <template repeat="{{photo in achievement.photos}}">

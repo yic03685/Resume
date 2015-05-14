@@ -17,7 +17,7 @@
         }]
     },{
         "detail": "Other than being responsible for UI components, I also work on handling store activities. Pre-order products on PS4 is one of the main feature I support. Others include making purchases, tracking user activities, and PlayStation Plus service.",
-        "short": "Programmed and maintained a web-based online store, which includes commerce activities (listing products, handling transaction, other user activities) and some social features on PS4.",
+        "short": "Handled commerce activities (including listing products, making transactions, selling membership... etc) for millions of PlayStation Users",
         "photos": [{
             "url": "store_preorder",
             "description": "Test description"

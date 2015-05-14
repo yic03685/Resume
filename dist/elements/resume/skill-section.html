@@ -9,7 +9,7 @@
                 <template repeat="{{entry, index in entries}}">
                     <template if="{{entry.expanded}}">
                         <div class="clear"/>
-                        <li class="skill-item-expanded" data-index={{index}} on-click="{{onClick}}">
+                        <li class="skill-item-expanded" data-index={{index}}">
                             <img class="skill-item-thumbnail icon {{entry.info.thumbnail}}-icon"/>
                             <span class="skill-item-name">{{entry.info.name}}:</span>
                             <span>{{entry.info.experience}}</span>
@@ -17,7 +17,7 @@
                         <div class="clear"/>
                     </template>
                     <template if="{{!entry.expanded}}">
-                        <li data-index={{index}} on-click="{{onClick}}">{{entry.info.name}}</li>
+                        <li data-index={{index}}">{{entry.info.name}}</li>
                     </template>
                 </template>
             </ul>

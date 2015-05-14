@@ -5,7 +5,8 @@ $selectedBackground: rgb(240,240,240);
 $selectedForeground: rgb(0,0,0);
 $selectedBorderColor: rgb(220,220,220);
 $popupWidth: 800px;
-$popupHeight: 530px;
+$popupHeight: 449px;
+
 
 body {
   width: 100vw;
@@ -200,7 +201,7 @@ a[href] {
 
 .photo {
   width: 300px;
-  height: 200px;
+  height: 169px;
   background-size: 100% 100%;
 }
 
@@ -299,7 +300,12 @@ li.selectable:hover {
   position: absolute;
   left: 50%;
   top: 50%;
-  margin: ($popupHeight/2+50) (-$popupWidth/2);
+  margin: ($popupHeight/2+80) (-$popupWidth/2);
+  width: $popupWidth;
+}
+
+.detail-description::first-letter {
+  font-size: 25pt;
 }
 
 .detail-like-container {
