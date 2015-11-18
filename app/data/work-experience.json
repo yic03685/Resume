@@ -1,6 +1,15 @@
 [{
+    "name": "Salesforce",
+    "startTime": "09/15/2015",
+    "location": "San Francisco, CA USA",
+    "achievement": [{
+        "detail": "Maintained feeds functionality and improved UI for Chatter (a business communication and collaboration tool.)",
+        "short": "Maintained feeds functionality and improved UI for Chatter (a business communication and collaboration tool.)",
+    }]
+},{
     "name": "Sony Network Entertainment International",
     "startTime": "09/01/2013",
+    "endTime": "09/14/2015",
     "location": "San Francisco, CA USA",
     "achievement": [{
         "detail": "The UI of PlayStation was built with a web-component-like framework. I am responsible for creating and maintaining components including product tiles, promotion carousel, showing product details and many more.",
