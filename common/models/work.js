@@ -15,7 +15,9 @@ module.exports = function (Work) {
 
     function getAllWork(models) {
         return new RSVP.Promise(function (resolve, reject) {
-            models.WorkItem.find(function (err, workItems) {
+            models.WorkItem.find({
+              order: 'startTime DESC'
+            },function (err, workItems) {
                 RSVP.all(workItems
                     .map( function(workItem){
                         return getAllAchievements(models, ObjectId(workItem.id));

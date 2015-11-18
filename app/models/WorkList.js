@@ -5,7 +5,7 @@
 import List from "templates/List";
 import Popup from "models/Popup";
 
-const DATA_URL = "../api/works?filter[order]=startTime DESC";
+const DATA_URL = "../api/works";
 
 class WorkList extends List {
 
